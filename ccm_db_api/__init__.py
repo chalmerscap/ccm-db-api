@@ -1,1 +1,1 @@
-from .ccm_db_api import Borsdata_api
+from .borsdata_db import Borsdata_db

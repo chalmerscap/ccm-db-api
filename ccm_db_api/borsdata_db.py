@@ -4,7 +4,7 @@ import json
 from pandas.io.json import json_normalize
 
 
-class Borsdata_api:
+class Borsdata_db:
 
     def __init__(self, key):
         self.key = key
@@ -72,9 +72,3 @@ class Borsdata_api:
     # Prints the output of requests.get() in a readable manner
     def print_json(self,    content):
         print(json.dumps(content, indent=4, sort_keys=True))
-
-
-if __name__ == '__main__':
-    x = prices_date('2020-05-01')
-
-    print(x)
