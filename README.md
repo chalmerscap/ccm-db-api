@@ -1,7 +1,7 @@
 # borsdata_api_utils
 ## Installation
 #### pip
-```pip install git```
+```pip install git```  
 ```pip install git+https://github.com/maxijohansson/borsdata_api_utils.git```
 #### conda
 ```conda install pip```	(probably unnecessary)
@@ -12,7 +12,7 @@ If using a conda environment, navigate to the environment's `Scripts` dir (with 
 
 Install the git package and this package.
 
-```pip install git```
+```pip install git```  
 ```pip install git+https://github.com/maxijohansson/ccm-db-api.git```
 
 #### updating
