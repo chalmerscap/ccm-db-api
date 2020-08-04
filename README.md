@@ -1,4 +1,4 @@
-# borsdata_api_utils
+# CCM database utils
 ## Installation
 #### pip
 ```pip install git```  
