@@ -29,7 +29,7 @@ There are two available classes:
 
 ```borsdata_db = db.Borsdata_db(key)```
 
-The `Borsdata_db` class contains functions for retrieving data from Börsdatas database. This requires an api key.
+The `Borsdata_db` class contains functions for retrieving data from Börsdata's database. This requires an api key.
 
 ```ccm_db = db.CCM_db(password)```
 
