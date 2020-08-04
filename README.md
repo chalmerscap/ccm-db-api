@@ -21,7 +21,6 @@ Add  `--upgrade` flag:
 ```pip install --upgrade git+https://github.com/maxijohansson/ccm-db-api.git```
 
 ## Usage
-When installed, the package can be imported:
 
 ```import ccm_db_api as db```
 
