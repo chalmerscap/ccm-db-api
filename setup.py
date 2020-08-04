@@ -1,9 +1,9 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+setup(
     name="ccm-db-api-maxijohansson", # Replace with your own username
     version="0.0.1",
     author="Max Johansson",
@@ -11,7 +11,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/maxijohansson/ccm_db_api",
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
+    install_requires=["pandas", "requests"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
