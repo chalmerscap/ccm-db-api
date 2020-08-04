@@ -6,7 +6,7 @@
 #### conda
 ```conda install pip```	(probably unnecessary)
 
-If using a conda environment, navigate to the environment's `Scripts` dir (with cd). the `envs` dir is located in the main conda dir.
+If using a conda environment, navigate to the environment's `Scripts` dir (with cd). The `envs` dir is located in the main conda dir.
 
 ```...\envs\env_name\Scripts\>```
 
