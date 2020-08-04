@@ -1,7 +1,7 @@
 import mysql.connector
 
 
-class Ccm_db:
+class CCM_db:
 
 	def __init__(self, password)
 
