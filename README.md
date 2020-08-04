@@ -32,8 +32,8 @@ The `Borsdata_db` class contains functions for retrieving data from Börsdata's 
 
 ```ccm_db = db.CCM_db(password)```
 
-The `CCM_db` class contains functions for retrieving data from CCM's database. This requires a password.
-___
+The `CCM_db` class contains functions for retrieving data from CCM's database. This requires a password.  
+
 The functions in both classes generally return pandas dataframes, so for example, ```df = borsdata_db.instruments()``` will provide a dataframe of all available instruments.
 
 
