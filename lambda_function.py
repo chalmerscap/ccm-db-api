@@ -29,7 +29,7 @@ def log_err(errmsg):
 logger.info("Cold start complete.") 
 
 
-def handler(event,context):
+def lambda_handler(event,context):
 
     instrument = event["queryStringParameters"]['instrument']
     first = event["queryStringParameters"]['first']
