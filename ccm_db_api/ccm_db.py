@@ -16,7 +16,8 @@ class Guldgruvan:
     # Returns dataframe of all available instruments in Guldgruvan
     def instruments(self, print_json=False):
         endpoint = 'instruments'
-        content = requests.get(self.url_base + endpoint, headers=self.params).json()
+        content = requests.get(self.url_base + endpoint, headers=self.params)
+        print(content.url)
         if print_json:
             self.print_json(content['body'])
 
