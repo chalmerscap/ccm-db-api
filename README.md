@@ -1,4 +1,4 @@
-# CCM database utils
+# CCM database python api integration
 ## Installation
 #### pip
 ```pip install git```  
@@ -22,18 +22,24 @@ Add  `--upgrade` flag:
 
 ## Usage
 
-```import ccm_db_api as db```
+```import ccm_db_api as api_utils```
 
 There are two available classes:
 
-```borsdata_db = db.Borsdata_db(key)```
+```borsdata = api_utils.Borsdata_db(key)```
 
 The `Borsdata_db` class contains functions for retrieving data from Börsdata's database. This requires an api key.
 
-```ccm_db = db.CCM_db(password)```
+```guldgruvan = api_utils.Guldgruvan(key)```
 
-The `CCM_db` class contains functions for retrieving data from CCM's database. This requires a password.  
+The `Guldgruvan` class contains functions for retrieving data from CCM's database. This requires an api key.  
 
-The functions in both classes generally return pandas dataframes, so for example, ```df = borsdata_db.instruments()``` will provide a dataframe of all available instruments.
+The functions in both classes generally return pandas dataframes, so for example, ```df = borsdata.instruments()``` will provide a dataframe of all available instruments.
+
+### Guldgruvan
+#### Available functions:
+* ```guldgruvan.instruments()```: Returns a dataframe with all available instruments
+* ```guldgruvan.dailyprices(instrument, first, last)```: Returns a dataframe with daily price data for ```instrument``` between dates ```first``` and ```last```
+
 
 
