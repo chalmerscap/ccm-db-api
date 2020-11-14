@@ -24,13 +24,13 @@ Add  `--upgrade` flag:
 ```pip install --upgrade git+https://github.com/maxijohansson/ccm-db-api.git```
 
 ## Börsdata database
-```import ccm_db_api as api_utils```
+```import ccm_db_api as api_utils```    
 ```borsdata = api_utils.Borsdata_db(key)```
 
 The `Borsdata_db` class contains functions for retrieving data from Börsdata's database. This requires an api key.
 
 ## Guldgruvan
-```import ccm_db_api as api_utils```
+```import ccm_db_api as api_utils```  
 ```guldgruvan = api_utils.Guldgruvan(key)```
 
 The `Guldgruvan` class contains functions for retrieving data from CCM's database. This requires an api key.  
