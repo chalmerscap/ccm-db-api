@@ -14,6 +14,7 @@ database = os.environ['DATABASE']
 logger=logging.getLogger()
 logger.setLevel(logging.INFO)
 
+
 def make_connection():
     return pymysql.connect(host=endpoint, user=dbuser, passwd=password,
         port=int(port), db=database, autocommit=True)
@@ -24,12 +25,12 @@ def log_err(errmsg):
     return {"body": errmsg , "headers": {}, "statusCode": 400,
         "isBase64Encoded":"false"}
 
+
 logger.info("Cold start complete.") 
 
+
 def handler(event,context):
-    print(event)
-    # event = json.loads(event['body'])
-    print(event)
+
     instrument = event["queryStringParameters"]['instrument']
     first = event["queryStringParameters"]['first']
     last = event["queryStringParameters"]['last']
@@ -82,6 +83,7 @@ def handler(event,context):
             cnx.close()
         except: 
             pass 
+
 
 if __name__== "__main__":
     handler(None,None)
