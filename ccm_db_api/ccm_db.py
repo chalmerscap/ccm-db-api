@@ -1,27 +1,42 @@
+import pandas as pd
 import mysql.connector
+import requests
+import json
+from pandas.io.json import json_normalize
 
 
-class CCM_db:
+class Guldgruvan:
 
-	def __init__(self, password)
-
-		self.cnx, self.cursor = self.open_connection()
-
-
-	def open_connection():
-	    cnx = mysql.connector.connect(
-	    host="185.51.226.6",
-	    user="CCM",
-	    passwd=password,
-	    database="CCM"
-	    )
-	    cursor = cnx.cursor()
-
-	    return cnx, cursor
+    def __init__(self, key):
+        self.key = key
+        self.params = {'x-api-key': key}
+        self.url_base = 'https://rn2ss6e8eb.execute-api.eu-west-3.amazonaws.com/alpha/'
 
 
-	def close_connection(cnx, cursor, commit):
-	    if commit == 1:
-	        cnx.commit()
-	    cursor.close()
-	    cnx.close()
+    # Returns dataframe of all available instruments in Guldgruvan
+    def instruments(self, print_json=False):
+        endpoint = 'instruments'
+        content = requests.get(self.url_base + endpoint, headers=self.params).json()
+        if print_json:
+            self.print_json(content['body'])
+
+        try:
+            return pd.DataFrame(json.loads(content['body']))
+        except:
+            print('error')
+
+
+    def dailyprices(self, instrument, first, last, print_json=False):
+        endpoint = 'dailyprices'
+        content = requests.get(self.url_base + endpoint, headers=self.params, params = {'instrument': instrument, 'first': first, 'last': last}).json()
+        if print_json:
+            print(content['body'])
+
+        try:
+            return pd.DataFrame(json.loads(content['body']))
+        except:
+            print('error')
+ 
+    
+    def print_json(self, content):
+        print(json.dumps(content, indent=4, sort_keys=True))
