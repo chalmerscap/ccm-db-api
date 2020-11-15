@@ -31,16 +31,14 @@ logger.info("Cold start complete.")
 
 def lambda_handler(event,context):
 
-    instrument = event["queryStringParameters"]['instrument']
-    first = event["queryStringParameters"]['first']
-    last = event["queryStringParameters"]['last']
+    param1 = event["queryStringParameters"]['param1']
+    param2 = event["queryStringParameters"]['param2']
+    param3 = event["queryStringParameters"]['param3']
 
-    query =  '''SELECT * FROM Prices 
-                WHERE instrumentId = (SELECT instrumentId FROM instruments WHERE (yahoo = '{}')) 
-                AND (date >= STR_TO_DATE('{}', '%Y-%m-%d'))
-                AND (date <= STR_TO_DATE('{}', '%Y-%m-%d'));'''.format(instrument, first, last)
+    query =  '''SELECT * FROM table 
+                WHERE param1 = {};'''.format(param1)
                 
-    # query = "SELECT * FROM instruments"
+    # query = "SELECT * FROM instruments;"
 
     try:
         cnx = make_connection()

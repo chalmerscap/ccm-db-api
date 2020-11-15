@@ -10,7 +10,7 @@ setup(
     description="CCM database api",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/maxijohansson/ccm_db_api",
+    url="https://github.com/maxijohansson/ccm-db-api",
     packages=find_packages(),
     install_requires=["pandas", "requests"],
     classifiers=[

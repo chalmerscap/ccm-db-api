@@ -1,5 +1,5 @@
 import pandas as pd
-import mysql.connector
+# import mysql.connector
 import requests
 import json
 from pandas.io.json import json_normalize
@@ -16,8 +16,7 @@ class Guldgruvan:
     # Returns dataframe of all available instruments in Guldgruvan
     def instruments(self, print_json=False):
         endpoint = 'instruments'
-        content = requests.get(self.url_base + endpoint, headers=self.params)
-        print(content.url)
+        content = requests.get(self.url_base + endpoint, headers=self.params).json()
         if print_json:
             self.print_json(content['body'])
 
