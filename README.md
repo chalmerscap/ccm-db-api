@@ -15,7 +15,7 @@ If using a conda environment, navigate to the environment's `Scripts` dir (with 
 
 Install the git package and this package.
 
-```pip install git```  
+```pip install git```  or ```pip install gitpython```  
 ```pip install git+https://github.com/maxijohansson/ccm-db-api.git```
 
 #### updating
