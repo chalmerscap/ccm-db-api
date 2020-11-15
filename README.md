@@ -5,7 +5,7 @@ This package can aid in retrieving data from CCM's data sources into a Python en
 ## Installation
 #### pip
 ```pip install git```  
-```pip install git+https://github.com/maxijohansson/borsdata_api_utils.git```
+```pip install git+https://github.com/maxijohansson/ccm-db-api.git```
 #### conda
 ```conda install pip```	(probably unnecessary)
 
