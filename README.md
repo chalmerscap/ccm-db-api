@@ -4,7 +4,7 @@ This package can aid in retrieving data from CCM's data sources into a Python en
 * CCM's Guldgruvan database
 ## Installation
 #### pip
-```pip install git``` or ```pip install gitpython```
+```pip install git``` or ```pip install gitpython```   
 ```pip install git+https://github.com/maxijohansson/ccm-db-api.git```
 #### conda
 ```conda install pip```	(probably unnecessary)
