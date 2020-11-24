@@ -79,7 +79,7 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 8. Configure the **Method Request**:
 
 	* **Settings** / **API Key  Required**: True
-	* **URL Query String Parameters**: Add parameters for the parameters you want.
+	* **URL Query String Parameters**: Add parameters for the parameters you want passed to the lambda function. 
 9. Add a mapping template to the **Integration request**:
 	* **Mapping templates** / **Request body passthrough**: *When there are no...*
 	* Add this mapping template:
