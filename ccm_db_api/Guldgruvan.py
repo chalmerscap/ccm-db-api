@@ -7,10 +7,10 @@ from pandas.io.json import json_normalize
 
 class Guldgruvan:
 
-    def __init__(self, key):
+    def __init__(self, key, version='valpha'):
         self.key = key
         self.params = {'x-api-key': key}
-        self.url_base = 'https://rn2ss6e8eb.execute-api.eu-west-3.amazonaws.com/alpha/'
+        self.url_base = 'https://rn2ss6e8eb.execute-api.eu-west-3.amazonaws.com/alpha/{}/'.format(version)
 
 
     # Returns dataframe of all available instruments in Guldgruvan
