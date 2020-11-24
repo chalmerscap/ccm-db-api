@@ -44,7 +44,8 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 
 ### Available functions:
 * ```guldgruvan.instruments()```: Returns a dataframe with all available instruments
-* ```guldgruvan.dailyprices(instrument, first, last)```: Returns a dataframe with daily price data for ```instrument``` [string, yahoo ticker] between dates ```first``` [string, format YYYY-MM-DD] and ```last``` [string, format YYYY-MM-DD]
+* ```guldgruvan.prices_daily(instrument, first, last)```: Returns a dataframe with daily price data for ```instrument``` [string, yahoo ticker] between dates ```first``` [string, format YYYY-MM-DD] and ```last``` [string, format YYYY-MM-DD]   
+* ```guldgruvan.report_year(instrument, year)```: Returns a dataframe with the annual report of ```instrument``` [string, yahoo ticker] from year ```year``` [string, format YYYY]
 
 
 ### Creating an endpoint
