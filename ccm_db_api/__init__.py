@@ -1,2 +1,2 @@
-from .borsdata_db import Borsdata_db
-from .ccm_db import Guldgruvan
+from .Borsdata_db import Borsdata_db
+from .Guldgruvan import Guldgruvan

@@ -26,7 +26,7 @@ class Guldgruvan:
             print('error')
 
 
-    def dailyprices(self, instrument, first, last, print_json=False):
+    def prices_daily(self, instrument, first, last, print_json=False):
         endpoint = 'dailyprices'
         content = requests.get(self.url_base + endpoint, headers=self.params, params = {'instrument': instrument, 'first': first, 'last': last}).json()
         if print_json:
@@ -36,6 +36,19 @@ class Guldgruvan:
             return pd.DataFrame(json.loads(content['body']))
         except:
             print('error')
+
+
+    def report_year(self, instrument, year, print_json=False):
+        endpoint = 'report-year'
+        content = requests.get(self.url_base + endpoint, headers=self.params, params = {'instrument': instrument, 'year': year}).json()
+        if print_json:
+            print(content['body'])
+
+        try:
+            return pd.DataFrame(json.loads(content['body']))
+        except:
+            print('error')
+ 
  
     
     def print_json(self, content):
