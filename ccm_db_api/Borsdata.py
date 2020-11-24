@@ -4,7 +4,7 @@ import json
 from pandas.io.json import json_normalize
 
 
-class Borsdata_db:
+class Borsdata:
 
     def __init__(self, key):
         self.key = key
@@ -90,6 +90,6 @@ class Borsdata_db:
         return json_normalize(content['stockPricesList'])
 
 
-    # Prints the output of requests.get() in a readable manner
+    # Prints the output of requests.get() in a readable manner dfd
     def print_json(self, content):
         print(json.dumps(content, indent=4, sort_keys=True))
