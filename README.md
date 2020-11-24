@@ -25,9 +25,9 @@ Add  `--upgrade` flag:
 
 ## Börsdata database
 ```import ccm_db_api as api_utils```    
-```borsdata = api_utils.Borsdata_db(key)```
+```borsdata = api_utils.Borsdata(key)```
 
-The `Borsdata_db` class contains functions for retrieving data from Börsdata's database. This requires an api key.
+The `Borsdata` class contains functions for retrieving data from Börsdata's database. This requires an api key.
 
 ## Guldgruvan
 ```import ccm_db_api as api_utils```  
