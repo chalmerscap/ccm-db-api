@@ -44,7 +44,8 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 
 ### Available functions:
 * ```guldgruvan.instruments()```: Returns a dataframe with all available instruments
-* ```guldgruvan.dailyprices(instrument, first, last)```: Returns a dataframe with daily price data for ```instrument``` [string, yahoo ticker] between dates ```first``` [string, format YYYY-MM-DD] and ```last``` [string, format YYYY-MM-DD]
+* ```guldgruvan.prices_daily(instrument, first, last)```: Returns a dataframe with daily price data for ```instrument``` [string, yahoo ticker] between dates ```first``` [string, format YYYY-MM-DD] and ```last``` [string, format YYYY-MM-DD]   
+* ```guldgruvan.report_year(instrument, year)```: Returns a dataframe with the annual report of ```instrument``` [string, yahoo ticker] from year ```year``` [string, format YYYY]
 
 
 ### Creating an endpoint
@@ -78,7 +79,7 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 8. Configure the **Method Request**:
 
 	* **Settings** / **API Key  Required**: True
-	* **URL Query String Parameters**: Add parameters for the parameters you want.
+	* **URL Query String Parameters**: Add parameters for the parameters you want passed to the lambda function. 
 9. Add a mapping template to the **Integration request**:
 	* **Mapping templates** / **Request body passthrough**: *When there are no...*
 	* Add this mapping template:
