@@ -21,13 +21,16 @@ Install the git package and this package.
 #### updating
 Add  `--upgrade` flag:
 
-```pip install --upgrade git+https://github.com/maxijohansson/ccm-db-api.git```
+```pip install --upgrade git+https://github.com/maxijohansson/ccm-db-api.git```  
+
+#### common errors
+* Numpy fails to pass a sanity check: downgrade numpy with ```pip install numpy==1.19.3```  
 
 ## Börsdata database
 ```import ccm_db_api as api_utils```    
-```borsdata = api_utils.Borsdata_db(key)```
+```borsdata = api_utils.Borsdata(key)```
 
-The `Borsdata_db` class contains functions for retrieving data from Börsdata's database. This requires an api key.
+The `Borsdata` class contains functions for retrieving data from Börsdata's database. This requires an api key.
 
 ## Guldgruvan
 ```import ccm_db_api as api_utils```  
