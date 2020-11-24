@@ -75,7 +75,7 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 
 5. Implement the database query in *lambda_function.py*.
 
-6. Enter the API Gateway service in the AWS Console and go to **Guldgruvan** / **Actions** / **Create resource**. Choose name and **Create resource**.
+6. Enter the API Gateway service in the AWS Console and open the **Guldgruvan** API. Select the resource to place the new resource under (place the new endpoint in the right version) and click **Actions** / **Create resource**. Choose name and **Create resource**.
 7. **Actions** / **Create method** and choose the type of method. (GET if retrieving data)
 	* **Integration type**: Lambda function
 	* **Lambda Function**: Enter the name of the Lambda function
