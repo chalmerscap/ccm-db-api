@@ -46,9 +46,22 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 * The Python function translates the JSON output to a Pandas dataframe.
 
 ### Available functions:
+#### Retrieving data:
 * ```guldgruvan.instruments()```: Returns a dataframe with all available instruments
-* ```guldgruvan.prices_daily(instrument, first, last)```: Returns a dataframe with daily price data for ```instrument``` [string, yahoo ticker] between dates ```first``` [string, format YYYY-MM-DD] and ```last``` [string, format YYYY-MM-DD]   
-* ```guldgruvan.report_year(instrument, year)```: Returns a dataframe with the annual report of ```instrument``` [string, yahoo ticker] from year ```year``` [string, format YYYY]
+* ```guldgruvan.prices_daily(instrument, first, last)```: Returns a dataframe with daily price data
+	* ```instrument``` [string, yahoo ticker]
+	* ```first``` [string, format YYYY-MM-DD] First date of prices
+	* ```last``` [string, format YYYY-MM-DD] Last date of prices
+* ```guldgruvan.report_year(instrument, year)```: Returns a dataframe with figures from an annual report
+	* ```instrument``` [string, yahoo ticker] 
+	* ```year``` [string, format YYYY]  Report year
+
+#### Handling portfolios
+* ```guldgruvan.new_portfolio(name, initial_value, locale='nordic')```:  Creates a new portfolio
+	* ```name``` [string] Name of new portfolio
+	* ```initial_value``` [int] Initial cash holding in portfolio in SEK 
+	* ```locale``` [string] Not implemented yet, leave empty  
+
 
 
 ### Creating an endpoint
