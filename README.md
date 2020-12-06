@@ -75,7 +75,7 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 
 2. In the **Function code** window / **Actions** / **Upload a file from Amazon S3**, enter the S3 link to the resource with the necessary Python packages for the lambda function: `s3://ccmlambdabucket/pymysql_archive.zip` and save.
 
-3. Create a file *lambda_function.py* in the Lambda function's top directory. Copy the contents from the file *lambda_function.py* in this repo to the *lambda_function.py* file in the **Function code** window.
+3. Create a file *helper_files\lambda_function.py* in the Lambda function's top directory. Copy the contents from the file *lambda_function.py* in this repo to the *lambda_function.py* file in the **Function code** window.
 
 4. Set the **Environment variables**:
 	* ```DATABASE``` := ```guldgruvan```
@@ -100,4 +100,4 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 	* **Mapping templates** / **Request body passthrough**: *When there are no...*
 	* Add this mapping template:
 		* **Content-Type**: application/json
-		* Copy the code from the mapping-template file in this repo to the input window and save.
+		* Copy the code from the *helper_files\mapping-template.txt* file in this repo to the input window and save.
