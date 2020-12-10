@@ -28,7 +28,7 @@ Add  `--upgrade` flag:
 
 ## Börsdata database
 ```import ccm_db_api as api_utils```    
-```borsdata = api_utils.Borsdata(key)```
+```borsdata = api_utils.Borsdata(key = '*****************')```
 
 The `Borsdata` class contains functions for retrieving data from Börsdata's database. This requires an api key.
 
@@ -46,23 +46,48 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 * The Python function translates the JSON output to a Pandas dataframe.
 
 ### Available functions:
+
 #### Retrieving data:
-* ```guldgruvan.instruments()```: Returns a dataframe with all available instruments
-* ```guldgruvan.prices_daily(instrument, first, last)```: Returns a dataframe with daily price data
+* ```instruments()``` 
+Returns a dataframe with all available instruments<br><br>
+* ```prices_daily(instrument, first, last)```
+Returns a dataframe with daily price data
 	* ```instrument``` [string, yahoo ticker]
 	* ```first``` [string, format YYYY-MM-DD] First date of prices
-	* ```last``` [string, format YYYY-MM-DD] Last date of prices
-* ```guldgruvan.report_year(instrument, year)```: Returns a dataframe with figures from an annual report
+	* ```last``` [string, format YYYY-MM-DD] Last date of prices<br><br>
+* ```report_year(instrument, year)```
+Returns a dataframe with figures from an annual report
 	* ```instrument``` [string, yahoo ticker] 
 	* ```year``` [string, format YYYY]  Report year
 
 #### Handling portfolios
-* ```guldgruvan.new_portfolio(name, initial_value, locale='nordic')```:  Creates a new portfolio
+* ```open_portfolio(name, initial_value, locale='nordic')```
+Creates a new portfolio [NOT IMPLEMENTED YET]
 	* ```name``` [string] Name of new portfolio
 	* ```initial_value``` [int] Initial cash holding in portfolio in SEK 
-	* ```locale``` [string] Not implemented yet, leave empty  
+	* ```locale``` [string] Not implemented yet, leave empty    <br><br>
+* ```close_portfolio(name)``` 
+[NOT IMPLEMENTED YET] 
+	* ```name``` [string] Name of new portfolio<br><br>
+* ```buy(instrument, portfolio, n_shares)``` 
+Opens a new holding position in a portfolio [NOT IMPLEMENTED YET]
+	* ```instrument``` [string, yahoo ticker] Intrument to add to portfolio
+	* ```portfolio``` [string] Name of portfolio to add holding to
+	* ```n_shares``` [int] Number of shares to purchase<br><br>
+* ```sell(ìnstrument, portfolio, amount)```
+Closes a holding position [NOT IMPLEMENTED YET]
+	* ```instrument``` [string] Instrument to sell
+	* ```portfolio``` [string] Name of portfolio to close position in 
+	* ```n_shares``` [int or ```'all'```] number of shares to sell<br><br>
+* ```get_portfolio(portfolio)```
+Returns a dataframe with value of holdings in portfolio [NOT IMPLEMENTED YET]
+	* ```portfolio``` [string] Name of portfolio<br><br>
+* ```get_transactions(portfolio)```
+Returns a dataframe with transaction history for a portfolio [NOT IMPLEMENTED YET]
+	* ```portfolio``` [string] Name of portfolio
 
-
+#### Example usage:
+```df = guldgruvan.instruments()``` 
 
 ### Creating an endpoint
 1. Enter the Lambda service in the AWS Console and click **Create function**.
