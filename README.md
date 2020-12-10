@@ -49,26 +49,26 @@ The `Guldgruvan` class contains functions for retrieving data from CCM's databas
 
 #### Retrieving data:
 * ```instruments()``` 
-Returns a dataframe with all available instruments<br><br>
+Returns a dataframe with all available instruments and their metadata <br><br>
 * ```prices_daily(instrument, first, last)```
-Returns a dataframe with daily price data
+Returns a dataframe with daily price data for a ticker 
 	* ```instrument``` [string, yahoo ticker]
-	* ```first``` [string, format YYYY-MM-DD] First date of prices
-	* ```last``` [string, format YYYY-MM-DD] Last date of prices<br><br>
+	* ```first``` [string, format ```'YYYY-MM-DD'```] First date of prices
+	* ```last``` [string, format ```'YYYY-MM-DD'```] Last date of prices<br><br>
 * ```report_year(instrument, year)```
 Returns a dataframe with figures from an annual report
 	* ```instrument``` [string, yahoo ticker] 
-	* ```year``` [string, format YYYY]  Report year
-
-#### Handling portfolios
+	* ```year``` [string, format ```'YYYY'```]  Report year<br><br>
+	
+#### Managing portfolios
 * ```open_portfolio(name, initial_value, locale='nordic')```
 Creates a new portfolio [NOT IMPLEMENTED YET]
 	* ```name``` [string] Name of new portfolio
 	* ```initial_value``` [int] Initial cash holding in portfolio in SEK 
 	* ```locale``` [string] Not implemented yet, leave empty    <br><br>
 * ```close_portfolio(name)``` 
-[NOT IMPLEMENTED YET] 
-	* ```name``` [string] Name of new portfolio<br><br>
+Deletes portfolio? [NOT IMPLEMENTED YET] 
+	* ```name``` [string] Name of portfolio to close<br><br>
 * ```buy(instrument, portfolio, n_shares)``` 
 Opens a new holding position in a portfolio [NOT IMPLEMENTED YET]
 	* ```instrument``` [string, yahoo ticker] Intrument to add to portfolio
@@ -78,7 +78,7 @@ Opens a new holding position in a portfolio [NOT IMPLEMENTED YET]
 Closes a holding position [NOT IMPLEMENTED YET]
 	* ```instrument``` [string] Instrument to sell
 	* ```portfolio``` [string] Name of portfolio to close position in 
-	* ```n_shares``` [int or ```'all'```] number of shares to sell<br><br>
+	* ```n_shares``` [int or ```'all'```] Number of shares to sell<br><br>
 * ```get_portfolio(portfolio)```
 Returns a dataframe with value of holdings in portfolio [NOT IMPLEMENTED YET]
 	* ```portfolio``` [string] Name of portfolio<br><br>
@@ -88,6 +88,7 @@ Returns a dataframe with transaction history for a portfolio [NOT IMPLEMENTED YE
 
 #### Example usage:
 ```df = guldgruvan.instruments()``` 
+
 
 ### Creating an endpoint
 1. Enter the Lambda service in the AWS Console and click **Create function**.
