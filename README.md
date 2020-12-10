@@ -61,6 +61,11 @@ Returns a dataframe with figures from an annual report
 	* ```year``` [string, format ```'YYYY'```]  Report year<br><br>
 	
 #### Managing portfolios
+* ```portfolios()```
+Returns a dataframe with portfolios and their metadata [NOT IMPLEMENTED YET]<br><br>
+* ```get_portfolio(portfolio)```
+Returns a dataframe with value of holdings in portfolio [NOT IMPLEMENTED YET]
+	* ```portfolio``` [string] Name of portfolio<br><br>
 * ```open_portfolio(name, initial_value, locale='nordic')```
 Creates a new portfolio [NOT IMPLEMENTED YET]
 	* ```name``` [string] Name of new portfolio
@@ -79,15 +84,12 @@ Closes a holding position [NOT IMPLEMENTED YET]
 	* ```instrument``` [string] Instrument to sell
 	* ```portfolio``` [string] Name of portfolio to close position in 
 	* ```n_shares``` [int or ```'all'```] Number of shares to sell<br><br>
-* ```get_portfolio(portfolio)```
-Returns a dataframe with value of holdings in portfolio [NOT IMPLEMENTED YET]
-	* ```portfolio``` [string] Name of portfolio<br><br>
 * ```get_transactions(portfolio)```
 Returns a dataframe with transaction history for a portfolio [NOT IMPLEMENTED YET]
 	* ```portfolio``` [string] Name of portfolio
 
 #### Example usage:
-```df = guldgruvan.instruments()``` 
+```df = guldgruvan.instruments()```  
 
 
 ### Creating an endpoint
