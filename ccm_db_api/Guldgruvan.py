@@ -23,7 +23,7 @@ class Guldgruvan:
         try:
             return pd.DataFrame(json.loads(content['body']))
         except:
-            print('error')
+            print('Error when loading json')
 
 
     def prices_daily(self, instrument, first, last, print_json=False):
@@ -35,7 +35,7 @@ class Guldgruvan:
         try:
             return pd.DataFrame(json.loads(content['body']))
         except:
-            print('error')
+            print('Error when loading json')
 
 
     def report_year(self, instrument, year, print_json=False):
@@ -47,7 +47,19 @@ class Guldgruvan:
         try:
             return pd.DataFrame(json.loads(content['body']))
         except:
-            print('error')
+            print('Error when loading json')
+
+
+    # def holdings(self, print_json=False):
+    #     endpoint = 'holdings'
+    #     content = requests.get(self.url_base + endpoint, headers=self.params).json()
+    #     if print_json:
+    #         self.print_json(content['body'])
+
+    #     try:
+    #         return pd.DataFrame(json.loads(content['body']))
+    #     except:
+    #         print('Error when loading json')
 
 
     def holdings(self, print_json=False):
@@ -59,8 +71,11 @@ class Guldgruvan:
         try:
             return pd.DataFrame(json.loads(content['body']))
         except:
-            print('error')
- 
+            print('Error when loading json')
+
+
+
+
  
     
     def print_json(self, content):

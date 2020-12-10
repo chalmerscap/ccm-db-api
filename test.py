@@ -1,7 +1,7 @@
 import ccm_db_api as api
 import matplotlib.pyplot as plt
 
-key = 'kLP2Dr4O8s4iaGuYRsKXM7UWlvYQDLN25CHn1rGZ'
+key = ''
 guldgruvan = api.Guldgruvan(key)
 
 # df = guldgruvan.prices_daily('AAK.ST', '2018-01-01', '2018-02-01', print_json=0)
