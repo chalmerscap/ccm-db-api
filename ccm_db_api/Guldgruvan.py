@@ -17,10 +17,11 @@ class Guldgruvan:
     def instruments(self, print_json=False):
         endpoint = 'instruments'
         content = requests.get(self.url_base + endpoint, headers=self.params).json()
-        if print_json:
-            self.print_json(content['body'])
 
         try:
+            body = pd.DataFrame(json.loads(content['body']))
+            if print_json:
+                self.print_json(body)
             return pd.DataFrame(json.loads(content['body']))
         except:
             print('Error when loading json')
@@ -33,6 +34,9 @@ class Guldgruvan:
             print(content['body'])
 
         try:
+            body = pd.DataFrame(json.loads(content['body']))
+            if print_json:
+                self.print_json(body)
             return pd.DataFrame(json.loads(content['body']))
         except:
             print('Error when loading json')
@@ -45,6 +49,9 @@ class Guldgruvan:
             print(content['body'])
 
         try:
+            body = pd.DataFrame(json.loads(content['body']))
+            if print_json:
+                self.print_json(body)
             return pd.DataFrame(json.loads(content['body']))
         except:
             print('Error when loading json')
@@ -69,6 +76,9 @@ class Guldgruvan:
             self.print_json(content['body'])
 
         try:
+            body = pd.DataFrame(json.loads(content['body']))
+            if print_json:
+                self.print_json(body)
             return pd.DataFrame(json.loads(content['body']))
         except:
             print('Error when loading json')
