@@ -27,7 +27,7 @@ class Guldgruvan:
             print('Error when loading json')
 
 
-    def prices_daily(self, instrument, first, last, print_json=False):
+    def prices_daily(self, instrument, first='1970-01-01', last='2100-01-01', print_json=False):
         endpoint = 'dailyprices'
         content = requests.get(self.url_base + endpoint, headers=self.params, params = {'instrument': instrument, 'first': first, 'last': last}).json()
         if print_json:
