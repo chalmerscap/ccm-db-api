@@ -25,6 +25,8 @@ class Guldgruvan:
             return pd.DataFrame(json.loads(content['body']))
         except:
             print('Error when loading json')
+            # if content['message'] == 'Limit exceeded'
+            #     print('Limit exceeded')
 
 
     def prices_daily(self, instrument, first='1970-01-01', last='2100-01-01', print_json=False):
@@ -72,6 +74,21 @@ class Guldgruvan:
     def holdings(self, print_json=False):
         endpoint = 'holdings'
         content = requests.get(self.url_base + endpoint, headers=self.params).json()
+        if print_json:
+            self.print_json(content['body'])
+
+        try:
+            body = pd.DataFrame(json.loads(content['body']))
+            if print_json:
+                self.print_json(body)
+            return pd.DataFrame(json.loads(content['body']))
+        except:
+            print('Error when loading json')
+
+
+    def datasets(self, dataset, print_json=False):
+        endpoint = 'datasets'
+        content = requests.get(self.url_base + endpoint, headers=self.params, params = {'dataset': dataset}).json()
         if print_json:
             self.print_json(content['body'])
 
