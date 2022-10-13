@@ -31,7 +31,7 @@ class Guldgruvan:
 
     def prices_daily(self, instrument, first='1970-01-01', last='2100-01-01', print_json=False):
         endpoint = 'dailyprices'
-        content = requests.get(self.url_base + endpoint, headers=self.params, params = {'instrument': instrument, 'first': first, 'last': last}).json()
+        content = requests.get(self.url_base + endpoint, headers=self.params, body = pd.DataFrame(json.loads(content['body']))).json()
         if print_json:
             print(content['body'])
 

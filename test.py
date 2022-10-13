@@ -1,10 +1,8 @@
 import ccm_db_api as api
 
-key = 'GdYKPPiRPZ1xFq7D7JFng7PSlkIuWyGk9GDjXfcl'
+key = '649de2c46ac74c20b2ba2708f4364c98'
 guldgruvan = api.Guldgruvan(key)
 
-df = guldgruvan.datasets('mj_yearly_metrics_labeled')
+df = guldgruvan.instruments(print_json=True)
 print(df)
 
-# plt.plot(df['date'], df['close'])
-# plt.show()

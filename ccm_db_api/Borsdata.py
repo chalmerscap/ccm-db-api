@@ -12,8 +12,11 @@ class Borsdata:
         self.url_base = 'https://apiservice.borsdata.se/v1/'
 
 
-    # Returns dataframe of all available instruments in Börsdata API
+    
     def instruments(self, print=False):
+        '''
+        Returns dataframe of all available instruments in Börsdata API
+        '''
         endpoint = 'instruments'
         content = requests.get(self.url_base + endpoint, self.params).json()
         if print:
@@ -22,8 +25,10 @@ class Borsdata:
         return json_normalize(content['instruments'])
 
 
-    # Returns dataframe of yearly history for a certain ticker and kpi
     def kpi_history(self, ticker_id, kpi_id, print=False):
+        '''
+        Returns dataframe of yearly history for a certain ticker and kpi
+        '''
         endpoint = 'instruments/{}/kpis/{}/{}/{}/history'.format(str(ticker_id), str(kpi_id) , 'year', 'mean')
         content = requests.get(self.url_base + endpoint, self.params).json()
         if print:
@@ -32,8 +37,10 @@ class Borsdata:
         return json_normalize(content['values'])
 
 
-    # Returns dataframe of a certain kpi for all tickers
     def kpi_all(self, kpi_id, print=False):
+        '''
+        Returns dataframe of a certain kpi for all tickers
+        '''
         endpoint = 'instruments/kpis/{}/{}/{}'.format(str(kpi_id), '1year', 'mean')
         content = requests.get(self.url_base + endpoint, self.params).json()
         if print:
@@ -42,8 +49,10 @@ class Borsdata:
         return json_normalize(content['values'])
 
 
-    # Returns dataframe of historical daily stock prices for a certain ticker
     def prices(self, ticker_id, print=False):
+        '''
+        Returns dataframe of historical daily stock prices for a certain ticker
+        '''
         endpoint = 'instruments/{}/stockprices'.format(str(ticker_id))
         content = requests.get(self.url_base + endpoint, self.params).json()
         if print:
@@ -52,8 +61,10 @@ class Borsdata:
         return json_normalize(content['stockPricesList'])
 
 
-    # Returns dataframe of all reports for a certain ticker
     def reports(self, ticker_id, print=False):
+        '''
+        Returns dataframe of all reports for a certain ticker
+        '''
         endpoint = 'instruments/{}/reports'.format(str(ticker_id))
         content = requests.get(self.url_base + endpoint, self.params).json()
         if print:
